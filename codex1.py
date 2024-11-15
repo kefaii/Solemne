@@ -10,6 +10,8 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 import requests
+import matplotlib.pyplot as plt
+
 # Título de la aplicación
 st.title('Aplicación Web: Datos desde una API REST')
 # URL de la API REST (puedes cambiarla por cualquier API pública que devuelva JSON)
