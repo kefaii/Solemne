@@ -12,8 +12,7 @@ import pandas as pd
 import requests
 # Título de la aplicación
 st.title('Aplicación Web: Datos desde una API REST')
-# URL de la API REST (puedes cambiarla por cualquier API pública que
-devuelva JSON)
+# URL de la API REST (puedes cambiarla por cualquier API pública que devuelva JSON)
 api_url = 'https://jsonplaceholder.typicode.com/posts'
 # Realizar la petición a la API
 response = requests.get(api_url)
