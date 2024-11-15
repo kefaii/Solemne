@@ -17,15 +17,6 @@ api_url = 'https://restcountries.com/v3.1/all'
 # Realizar la petición a la API
 response = requests.get(api_url)
 # Verificar que la respuesta sea exitosa (código 200)
-if response.status_code == 200:
- # Convertir los datos JSON en un DataFrame de Pandas
- data = response.json()
- df = pd.DataFrame(data)
- # Mostrar los primeros registros
- st.write('Datos obtenidos de la API:')
- st.write(df.head())
-else:
- st.error('Error al obtener los datos de la API')
 
 if response.status_code == 200:
     # Convertir los datos JSON en un DataFrame de Pandas
@@ -36,6 +27,8 @@ if response.status_code == 200:
     st.write(df.head())
     # Seleccionar una columna para mostrar en Streamlit
     columnas = st.multiselect('Selecciona las columnas a visualizar',
+else:
+ st.error('Error al obtener los datos de la API')
     df.columns.tolist(), default=df.columns.tolist())
     df_seleccionado = df[columnas]
     # Mostrar el DataFrame con las columnas seleccionadas
