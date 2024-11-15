@@ -13,7 +13,7 @@ import requests
 # Título de la aplicación
 st.title('Aplicación Web: Datos desde una API REST')
 # URL de la API REST (puedes cambiarla por cualquier API pública que devuelva JSON)
-api_url = 'https://jsonplaceholder.typicode.com/posts'
+api_url = 'https://restcountries.com/v3.1/all'
 # Realizar la petición a la API
 response = requests.get(api_url)
 # Verificar que la respuesta sea exitosa (código 200)
