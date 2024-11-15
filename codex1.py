@@ -27,8 +27,6 @@ if response.status_code == 200:
     st.write(df.head())
     # Seleccionar una columna para mostrar en Streamlit
     columnas = st.multiselect('Selecciona las columnas a visualizar',
-else:
- st.error('Error al obtener los datos de la API')
     df.columns.tolist(), default=df.columns.tolist())
     df_seleccionado = df[columnas]
     # Mostrar el DataFrame con las columnas seleccionadas
@@ -39,3 +37,6 @@ else:
     df_filtrado = df[df['id'] <= id_filtro]
     st.write(f'Mostrando datos donde ID <= {id_filtro}:')
     st.write(df_filtrado)
+
+else:
+ st.error('Error al obtener los datos de la API')
