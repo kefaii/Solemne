@@ -12,6 +12,31 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 
+# Endpoint de la API
+url = ""
+
+# Solicitud GET
+response = requests.get(url)
+if response.status_code == 200:
+    data = response.json()
+
+    # Extraer informacion relevante
+    countries = []
+    for country in data:
+        countries.append({
+            "Name": country.get("name",{}).get("common","N/A"),
+            "Region": country.get("region","N/A"),
+            "Population": country.get("population",0),
+            "Area (Km)": country.get("area",0),
+            "Borders Count": len(country.get("borders", [])),
+            "Languages Count": len(country.get("language", {})),
+            "Timezones Count": len(country.get("timezones", []))
+        })
+    # Convertir a DataFrame
+    df = pd.dataframe(countries)
+else:
+    print(f"error: {response.status_code}")
+
 # Título de la aplicación
 st.title('Aplicación Web: Datos desde una API REST')
 # URL de la API REST (puedes cambiarla por cualquier API pública que devuelva JSON)
