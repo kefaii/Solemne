@@ -33,7 +33,7 @@ if response.status_code == 200:
             "Timezones Count": len(country.get("timezones", []))
         })
     # Convertir a DataFrame
-    df = pd.Dataframe(countries)
+    df = pd.DataFrame(countries)
 else:
     print(f"error: {response.status_code}")
 
