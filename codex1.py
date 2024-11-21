@@ -62,7 +62,7 @@ if response.status_code == 200:
     # Filtro por ID
     id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
     df_filtrado = df[df['id'] <= id_filtro]
-    st.write(f'Mostrando datos donde ID <= {id_filtro}:')
+    st.write(f"Mostrando datos donde ID <= {id_filtro}:")
     st.write(df_filtrado)
 
 else:
