@@ -13,7 +13,7 @@ import requests
 import matplotlib.pyplot as plt
 
 # Endpoint de la API
-url = ""
+url = "https://restcountries.com/v3.1/all"
 
 # Solicitud GET
 response = requests.get(url)
