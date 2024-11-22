@@ -51,11 +51,6 @@ if response.status_code == 200:
     st.write('Datos obtenidos de la API:')
     st.write(df.head())
     
-    # Seleccionar una columna para mostrar en Streamlit
-    columnas = st.multiselect('Selecciona las columnas a visualizar',
-    df.columns.tolist(), default=df.columns.tolist())
-    df_seleccionado = df[columnas]
-    
     # Mostrar el DataFrame con las columnas seleccionadas
     st.write('Datos seleccionados:')
     st.write(df_seleccionado)
