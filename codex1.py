@@ -72,11 +72,16 @@ if response.status_code == 200:
     columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
     columna_estadistica = st.selectbox("Selecciona una columna para calcular estadisticas:", columnas_numericas) 
 
+    # Mostrar columna seleccionada
+    st.write("Datos de la columna",df[columna_estadistica])
+    
+    
     # Calcular estadisticas de la columna seleccionada
     if columna_estadistica:
         media = df[columna_estadistica].mean()
         mediana = df[columna_estadistica].median()
         desviacion = df[columna_estadistica].std()
+
     
     # Mostrar los resultados
     st.write(f"### Estadísticas de '{columna_estadistica}':")
