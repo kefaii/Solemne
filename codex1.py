@@ -86,6 +86,7 @@ if response.status_code == 200:
         return st.write(df)
         
     st.button("ascendente", on_click=ascendente(df))
+    st.write(ascendente(df))
 
 
     # Filtro por ID
