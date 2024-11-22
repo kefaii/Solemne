@@ -43,6 +43,10 @@ if response.status_code == 200:
     # Texto de la Descripcion
     st.text("Descripcion")
 
+
+
+    st.selectbox("SElecciona algo:",["hola", "chao"])
+
     
     # Título de la aplicación
     st.title('Aplicación Web: Datos desde una API REST')
