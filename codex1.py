@@ -45,7 +45,7 @@ if response.status_code == 200:
 
     
     # Título de la aplicación
-    st.title('Aplicación Web: Datos desde una API REST')
+    st.header('Aplicación Web: Datos desde una API REST')
     
     # Mostrar los primeros registros
     st.write('Datos obtenidos de la API:')
@@ -53,7 +53,7 @@ if response.status_code == 200:
 
     
     # Titulo de calcular media, mediana, desviacion
-    st.title("Seleccionar una columna específica del dataframe con un menú desplegable")
+    st.header("Seleccionar una columna específica del dataframe con un menú desplegable")
 
     # Mostrar columna seleccionada
     #st.write(f"Datos de la columna '{columna_seleccionada}':")
