@@ -35,7 +35,12 @@ if response.status_code == 200:
         
     # Convertir a DataFrame
     df = pd.DataFrame(countries)
+   
+    # Titulo de la Descripcion
+    st.title('Seccion de Descripcion')
+    
 
+    
     # Título de la aplicación
     st.title('Aplicación Web: Datos desde una API REST')
     # Mostrar los primeros registros
