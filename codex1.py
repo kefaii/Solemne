@@ -66,13 +66,11 @@ if response.status_code == 200:
     # Mostrar columna seleccionada
     st.write("Datos de la columna",df[columna_estadistica])
     
-    
     # Calcular estadisticas de la columna seleccionada
     if columna_estadistica:
         media = df[columna_estadistica].mean()
         mediana = df[columna_estadistica].median()
         desviacion = df[columna_estadistica].std()
-
     
     # Mostrar los resultados
     st.write(f"### Estadísticas de '{columna_estadistica}':")
@@ -81,7 +79,11 @@ if response.status_code == 200:
     st.write(f"- **Desviación estándar:** {desviacion}")
     
 
-
+    # Crear botones para ordenar columnas
+    def ascendente():
+        df.columns = df.sort_values(by='columna', ascending=true)
+        
+    st.button("ascendente", on_click=)
 
 
     # Filtro por ID
