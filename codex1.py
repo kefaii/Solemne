@@ -66,7 +66,7 @@ if response.status_code == 200:
     
     # Crear un selectbox para seleccionar una columna
     columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
-    columna_seleccionada = st.selectbox("Selecciona una columna para calcular estadisticas:", columnas_numericas)
+    columna_estadistica = st.selectbox("Selecciona una columna para calcular estadisticas:", columnas_numericas)
     
     
     # Mostrar columna seleccionada
