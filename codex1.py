@@ -50,9 +50,6 @@ if response.status_code == 200:
     
     # Título de la aplicación
     st.title('Aplicación Web: Datos desde una API REST')
-
-    # Menu de Seleccion
-    st.selectbox("Selecciona una columna:", df["Name", "Region","Population"])
     
     # Mostrar los primeros registros
     st.write('Datos obtenidos de la API:')
@@ -66,7 +63,14 @@ if response.status_code == 200:
     # Mostrar el DataFrame con las columnas seleccionadas
     st.write('Datos seleccionados:')
     st.write(df_seleccionado)
+
     
+    # Menu de Seleccion
+    columna_seleccionada = st.selectbox("Selecciona una columna:", df.columns )
+
+
+
+
     # Filtro por ID
     #id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
     #df_filtrado = df[df['id'] <= id_filtro]
