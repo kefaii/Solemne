@@ -65,8 +65,8 @@ if response.status_code == 200:
     columna_seleccionada = st.selectbox("Selecciona una columna para calcular estadisticas:", df.columns)
     
     # Mostrar columna seleccionada
-    st.write(f"Datos de la columna '{columna_seleccionada}':")
-    st.write(df[columna_seleccionada])
+    #st.write(f"Datos de la columna '{columna_seleccionada}':")
+    #st.write(df[columna_seleccionada])
     
     # Filtrar columnas numericas
     columnas_numericas = df.select_dtypes(include=["number"]).columns
@@ -79,10 +79,12 @@ if response.status_code == 200:
         desviacion = datos.std()
     
     # Mostrar los resultados
+    st.write(f"Datos de la columna '{columna_seleccionada}':")
     st.write(f"### Estadísticas de la columna '{columna_seleccionada}':")
     st.write(f"- **Media:** {media}")
     st.write(f"- **Mediana:** {mediana}")
     st.write(f"- **Desviación estándar:** {desviacion}")
+    st.write(df[columna_seleccionada])
 
 
 
