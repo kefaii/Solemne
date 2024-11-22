@@ -65,8 +65,12 @@ if response.status_code == 200:
     st.write(df_seleccionado)
 
     
-    # Menu de Seleccion
-    columna_seleccionada = st.selectbox("Selecciona una columna:", df.columns )
+    # Crear un selectbox para seleccionar una columna
+    columna_seleccionada = st.selectbox("Selecciona una columna:", df.columns)
+    
+    # Mostrar columna seleccionada
+    st.write(f"Datos de la columna '{columna_seleccionada}':")
+    st.write(df[columna_seleccionada])
 
 
 
