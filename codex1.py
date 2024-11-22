@@ -50,14 +50,10 @@ if response.status_code == 200:
     # Mostrar los primeros registros
     st.write('Datos obtenidos de la API:')
     st.write(df.head())
-    
-    # Mostrar el DataFrame con las columnas seleccionadas
-    st.write('Datos seleccionados:')
-    st.write(df_seleccionado)
 
     
     # Titulo de calcular media, mediana, desviacion
-    st.title("Media/Mediana/desviacion")
+    st.title("Seleccionar una columna específica del dataframe con un menú desplegable")
 
     # Mostrar columna seleccionada
     #st.write(f"Datos de la columna '{columna_seleccionada}':")
