@@ -43,10 +43,6 @@ if response.status_code == 200:
     # Texto de la Descripcion
     st.text("Descripcion")
 
-
-
-    #st.selectbox("SElecciona algo:",["hola", "chao"])
-
     
     # Título de la aplicación
     st.title('Aplicación Web: Datos desde una API REST')
@@ -66,11 +62,27 @@ if response.status_code == 200:
 
     
     # Crear un selectbox para seleccionar una columna
-    columna_seleccionada = st.selectbox("Selecciona una columna:", df.columns)
+    columna_seleccionada = st.selectbox("Selecciona una columna para calcular estadisticas:", df.columns)
     
     # Mostrar columna seleccionada
     st.write(f"Datos de la columna '{columna_seleccionada}':")
     st.write(df[columna_seleccionada])
+    
+    # Filtrar columnas numericas
+    columnas_numericas = df.select_dtypes(include=["number"]).columns
+
+    # Calcular estadisticas de la columna seleccionada
+    if columna_seleccionada:
+        datos = df[columna_seleccionada]
+        media = datos.mean()
+        mediana = datos.median()
+        desviacion = datos.std()
+    
+    # Mostrar los resultados
+    st.write(f"### Estadísticas de la columna '{columna_seleccionada}':")
+    st.write(f"- **Media:** {media}")
+    st.write(f"- **Mediana:** {mediana}")
+    st.write(f"- **Desviación estándar:** {desviacion}")
 
 
 
