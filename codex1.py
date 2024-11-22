@@ -80,10 +80,10 @@ if response.status_code == 200:
     
 
     # Crear botones para ordenar columnas
-    def ascendente():
+    def ascender():
         df.columns = df.sort_values(by='columna', ascending=true)
         
-    st.button("ascendente", on_click=)
+    st.button("ascendente", on_click=ascender)
 
 
     # Filtro por ID
