@@ -36,10 +36,12 @@ if response.status_code == 200:
     # Convertir a DataFrame
     df = pd.DataFrame(countries)
    
+    
     # Titulo de la Descripcion
     st.title('Sección de Descripcion')
+   
     # Texto de la Descripcion
-    st.text("hola xupalo")
+    st.text("Descripcion")
 
     
     # Título de la aplicación
@@ -59,10 +61,10 @@ if response.status_code == 200:
     st.write(df_seleccionado)
     
     # Filtro por ID
-    id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
-    df_filtrado = df[df['id'] <= id_filtro]
-    st.write(f"Mostrando datos donde ID <= {id_filtro}:")
-    st.write(df_filtrado)
+    #id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
+    #df_filtrado = df[df['id'] <= id_filtro]
+    #st.write(f"Mostrando datos donde ID <= {id_filtro}:")
+    #st.write(df_filtrado)
 
 else:
  st.error('Error al obtener los datos de la API')
