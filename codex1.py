@@ -83,7 +83,7 @@ if response.status_code == 200:
     
     def ascendente(df):
         df = df.sort_values(by='columna', ascending=True)
-        return df
+        return st.write(df)
         
     st.button("ascendente", on_click=ascendente(df))
 
