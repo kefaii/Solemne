@@ -65,24 +65,24 @@ if response.status_code == 200:
     st.title("Media/Mediana/desviacion")
     
     # Crear un selectbox para seleccionar una columna
-    columna_seleccionada = st.selectbox("Selecciona una columna para calcular estadisticas:", df.columns)
+    columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
+    columna_seleccionada = st.selectbox("Selecciona una columna para calcular estadisticas:", columnas_numericas)
+    
     
     # Mostrar columna seleccionada
     #st.write(f"Datos de la columna '{columna_seleccionada}':")
     #st.write(df[columna_seleccionada])
     
-    # Filtrar columnas numericas
-    columnas_numericas = df.select_dtypes(include=["number"]).columns
+    
 
     # Calcular estadisticas de la columna seleccionada
-    if columna_seleccionada:
-        datos = df.columns()
-        media = datos.mean()
-        mediana = datos.median()
-        desviacion = datos.std()
+    if columna_estadistica:
+        media = df[columna_estadistica].mean()
+        mediana = df[columna_estadistica].median()
+        desviacion = df[columna_estadistica].std()
     
     # Mostrar los resultados
-    st.write(f"### Estadísticas de la columna '{columna_seleccionada}':")
+    st.write(f"### Estadísticas de '{columna_estadistica}':")
     st.write(f"- **Media:** {media}")
     st.write(f"- **Mediana:** {mediana}")
     st.write(f"- **Desviación estándar:** {desviacion}")
