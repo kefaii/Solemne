@@ -32,23 +32,12 @@ if response.status_code == 200:
             "Languages Count": len(country.get("language", {})),
             "Timezones Count": len(country.get("timezones", []))
         })
+        
     # Convertir a DataFrame
     df = pd.DataFrame(countries)
-else:
-    print(f"error: {response.status_code}")
 
-# Título de la aplicación
-st.title('Aplicación Web: Datos desde una API REST')
-# URL de la API REST (puedes cambiarla por cualquier API pública que devuelva JSON)
-api_url = 'https://restcountries.com/v3.1/all'
-# Realizar la petición a la API
-response = requests.get(api_url)
-# Verificar que la respuesta sea exitosa (código 200)
-
-if response.status_code == 200:
-    # Convertir los datos JSON en un DataFrame de Pandas
-    data = response.json()
-    df = pd.DataFrame(data)
+    # Título de la aplicación
+    st.title('Aplicación Web: Datos desde una API REST')
     # Mostrar los primeros registros
     st.write('Datos obtenidos de la API:')
     st.write(df.head())
