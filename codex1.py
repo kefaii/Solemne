@@ -37,22 +37,27 @@ if response.status_code == 200:
     df = pd.DataFrame(countries)
    
     # Titulo de la Descripcion
-    st.title('Seccion de Descripcion')
-    
+    st.title('Sección de Descripcion')
+    # Texto de la Descripcion
+    Texto_des = st.text_input("Prueba texto")
 
     
     # Título de la aplicación
     st.title('Aplicación Web: Datos desde una API REST')
+    
     # Mostrar los primeros registros
     st.write('Datos obtenidos de la API:')
     st.write(df.head())
+    
     # Seleccionar una columna para mostrar en Streamlit
     columnas = st.multiselect('Selecciona las columnas a visualizar',
     df.columns.tolist(), default=df.columns.tolist())
     df_seleccionado = df[columnas]
+    
     # Mostrar el DataFrame con las columnas seleccionadas
     st.write('Datos seleccionados:')
     st.write(df_seleccionado)
+    
     # Filtro por ID
     id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
     df_filtrado = df[df['id'] <= id_filtro]
