@@ -73,18 +73,17 @@ if response.status_code == 200:
 
     # Calcular estadisticas de la columna seleccionada
     if columna_seleccionada:
-        datos = df[columna_seleccionada]
+        datos = df.columns
         media = datos.mean()
         mediana = datos.median()
         desviacion = datos.std()
     
     # Mostrar los resultados
-    st.write(f"Datos de la columna '{columna_seleccionada}':")
     st.write(f"### Estadísticas de la columna '{columna_seleccionada}':")
     st.write(f"- **Media:** {media}")
     st.write(f"- **Mediana:** {mediana}")
     st.write(f"- **Desviación estándar:** {desviacion}")
-    st.write(df[columna_seleccionada])
+    
 
 
 
