@@ -52,7 +52,7 @@ if response.status_code == 200:
     st.title('Aplicación Web: Datos desde una API REST')
 
     # Menu de Seleccion
-    st.selectbox("Selecciona una columna:",st.write(df))
+    st.selectbox("Selecciona una columna:", df["Name", "Region","Population"])
     
     # Mostrar los primeros registros
     st.write('Datos obtenidos de la API:')
