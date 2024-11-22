@@ -39,7 +39,7 @@ if response.status_code == 200:
     # Titulo de la Descripcion
     st.title('Sección de Descripcion')
     # Texto de la Descripcion
-    Texto_des = st.text_input("Prueba texto")
+    texto_usuario = st.text_area("Introduce texto:",height=200,  # Altura en píxeles placeholder="Escribe aquí tu mensaje...")
 
     
     # Título de la aplicación
