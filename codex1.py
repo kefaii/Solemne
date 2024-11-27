@@ -89,6 +89,18 @@ if response.status_code == 200:
     st.write(ascendente(df))
 
 
+    st.title("Filtrar Columnas")
+    st.subheader("Dataframe Original")
+    st.dataframe(df)
+
+    columnas_seleccionadas = st.multiselect("Selecciona las columnas que quieres ver:",
+        options=df.columns,
+        default=df.columns
+    )
+
+    st.subheader("DataFrame filtrado")
+    df_filtrado = df[columnas_seleccionadas]
+    st.dataframe(df_filtrado)
     # Filtro por ID
     #id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
     #df_filtrado = df[df['id'] <= id_filtro]
