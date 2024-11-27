@@ -85,7 +85,7 @@ if response.status_code == 200:
         df = df.sort_values(by=columna_estadistica, ascending=True)
         return st.write(df)
     st.header("Columnas ordenadas de forma ascendente")    
-    st.button("ascendente", on_click=ascendente(df))
+    #st.button("ascendente", on_click=ascendente(df))
     st.write(ascendente(df))
 
 
