@@ -12,7 +12,7 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 
-    df=pd.read_excel("paises.excel")
+    df=pd.read_excel("datos_paises_procesados.excel")
    
     
     # Titulo de la Descripcion
