@@ -56,8 +56,8 @@ if response.status_code == 200:
     st.header("Seleccionar una columna específica del dataframe con un menú desplegable")
 
     # Mostrar columna seleccionada
-    #st.write(f"Datos de la columna '{columna_seleccionada}':")
-    #st.write(df[columna_seleccionada])
+    st.write(f"Datos de la columna '{columna_seleccionada}':")
+    st.write(df[columna_seleccionada])
     
     # Crear un selectbox para seleccionar una columna
     columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
