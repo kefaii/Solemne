@@ -65,6 +65,7 @@ if response.status_code == 200:
 
     # Mostrar columna seleccionada
     st.write("Datos de la columna",df[columna_estadistica])
+    st.write(df[columna_estadistica])
     
     # Calcular estadisticas de la columna seleccionada
     if columna_estadistica:
