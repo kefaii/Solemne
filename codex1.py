@@ -12,58 +12,58 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 
-    df=pd.read_excel("datos_paises_procesados.excel")
+df = pd.read_excel("datos_paises_procesados.excel")
    
     
     # Titulo de la Descripcion
-    st.title('Sección de Descripcion')
+st.title('Sección de Descripcion')
    
     # Texto de la Descripcion
-    st.text("Descripcion")
+st.text("Descripcion")
 
     
     # Título de la aplicación
-    st.header('Aplicación Web: Datos desde una API REST')
+st.header('Aplicación Web: Datos desde una API REST')
     
     # Mostrar los primeros registros
-    st.write('Datos obtenidos de la API:')
-    st.write(df.head())
+st.write('Datos obtenidos de la API:')
+st.write(df.head())
 
     
     # Titulo de calcular media, mediana, desviacion
-    st.header("Seleccionar una columna específica del dataframe con un menú desplegable")
+st.header("Seleccionar una columna específica del dataframe con un menú desplegable")
 
     # Mostrar columna seleccionada
     #st.write(f"Datos de la columna '{columna_seleccionada}':")
     #st.write(df[columna_seleccionada])
     
     # Crear un selectbox para seleccionar una columna
-    columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
-    columna_estadistica = st.selectbox("Selecciona una columna para calcular estadisticas:", columnas_numericas) 
+columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
+columna_estadistica = st.selectbox("Selecciona una columna para calcular estadisticas:", columnas_numericas) 
 
     # Mostrar columna seleccionada
-    st.write("Datos de la columna",df[columna_estadistica])
+st.write("Datos de la columna",df[columna_estadistica])
     
     # Calcular estadisticas de la columna seleccionada
-    if columna_estadistica:
-        media = df[columna_estadistica].mean()
-        mediana = df[columna_estadistica].median()
-        desviacion = df[columna_estadistica].std()
+if columna_estadistica:
+    media = df[columna_estadistica].mean()
+    mediana = df[columna_estadistica].median()
+    desviacion = df[columna_estadistica].std()
     
     # Mostrar los resultados
-    st.write(f"### Estadísticas de '{columna_estadistica}':")
-    st.write(f"- **Media:** {media}")
-    st.write(f"- **Mediana:** {mediana}")
-    st.write(f"- **Desviación estándar:** {desviacion}")
+st.write(f"### Estadísticas de '{columna_estadistica}':")
+st.write(f"- **Media:** {media}")
+st.write(f"- **Mediana:** {mediana}")
+st.write(f"- **Desviación estándar:** {desviacion}")
     
 
     # Crear botones para ordenar columnas
-    def ascendente(df):
-        df = df.sort_values(by=columna_estadistica, ascending=True)
-        return st.write(df)
-    st.header("Columnas ordenadas de forma ascendente")    
-    st.button("ascendente", on_click=ascendente(df))
-    st.write(ascendente(df))
+def ascendente(df):
+    df = df.sort_values(by=columna_estadistica, ascending=True)
+    return st.write(df)
+st.header("Columnas ordenadas de forma ascendente")    
+st.button("ascendente", on_click=ascendente(df))
+st.write(ascendente(df))
 
 
     
