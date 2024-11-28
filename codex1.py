@@ -68,5 +68,4 @@ st.write(ascendente(df))
 
     
 
-else:
- st.error('Error al obtener los datos de la API')
+
