@@ -35,6 +35,7 @@ if response.status_code == 200:
         
     # Convertir a DataFrame
     df = pd.DataFrame(countries)
+    df=pd.read_excel("paises.excel")
    
     
     # Titulo de la Descripcion
