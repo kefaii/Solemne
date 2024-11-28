@@ -56,8 +56,8 @@ if response.status_code == 200:
     st.header("Seleccionar una columna específica del dataframe con un menú desplegable")
 
     # Mostrar columna seleccionada
-    st.write(f"Datos de la columna '{columna_seleccionada}':")
-    st.write(df[columna_seleccionada])
+    #st.write(f"Datos de la columna '{columna_seleccionada}':")
+    #st.write(df[columna_seleccionada])
     
     # Crear un selectbox para seleccionar una columna
     columnas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
@@ -80,7 +80,6 @@ if response.status_code == 200:
     
 
     # Crear botones para ordenar columnas
-    
     def ascendente(df):
         df = df.sort_values(by=columna_estadistica, ascending=True)
         return st.write(df)
@@ -90,11 +89,6 @@ if response.status_code == 200:
 
 
     
-    # Filtro por ID
-    #id_filtro = st.slider('Filtrar por ID (entre 1 y 100)', 1, 100, 50)
-    #df_filtrado = df[df['id'] <= id_filtro]
-    #st.write(f"Mostrando datos donde ID <= {id_filtro}:")
-    #st.write(df_filtrado)
 
 else:
  st.error('Error al obtener los datos de la API')
